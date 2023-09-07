@@ -1,71 +1,47 @@
-# API, REST e RESTFUL
+<h1 align='center'>expressJS-api</h1>
 
-## API
+Este arquivo, trata-se dos estudos sobre Api, Rest e Restful em Javascript com framework Express. </br>
+</br>
+API significa Application Programming Interface (Interface de Programação de Aplicação). No contexto de APIs, a palavra Aplicação refere-se a qualquer software com uma função distinta. A interface pode ser pensada como um contrato de serviço entre duas aplicações. </br>
+<br>
+O principal objetivo de uma API é integrar dois sistemas diferentes. Essa troca de dados entre dois sistemas tem o objetivo de automatizar processos, na maioria das vezes, e centralizar o uso de um programa.
 
-Cliente (Client)
-Garçom (pedidos, levar seus pedidos, para a cozinha) (API)
-Cozinha (Server)
+### 🛠 Tecnologias
 
-Acrônimo de Application Programming Interface (Interface de Programação de Aplicações) é basicamente um conjunto de rotinas e padrões estabelecidos por uma aplicação, para que outras aplicações possam utilizar as funcionalidades desta aplicação.
+As seguintes ferramentas foram usadas na construção do projeto:
 
-- Responsável por estabelecer comunicação entre diferentes serviços.
-- Meio de campo entre as tecnologias.
-- Intermediador para troca de informações.
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com)
+- [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [insomnia](https://insomnia.rest/)
 
-## REST
+Para os estudos foi utilizado um Package.Json para obter dados.</br>
 
-um acrônimo para REpresentational State Transfer (Transferência de Estado Representativo).
+E foi codado os Verbos HTTP: GET, PUT, POST e DELETE</br>
+obs: POST ficou inviável pois json é imutável</br>
 
-Será feita a transferência de dados de uma maneira simbólica, figurativa, representativa, de maneira didática.
+<h2 align='center'>Resultado com prints</h2>
+  
+![1075fb0e-1723-4ac5-a074-344ccdd9e49e](https://github.com/Matheus-Patricio/expressJS-api/assets/98114310/8b676ead-a7d5-4a0d-b2b2-538d6c62b43a)
+![b191887d-6f90-47c9-a1e4-884c30c18ecb](https://github.com/Matheus-Patricio/expressJS-api/assets/98114310/89dc5e67-461d-4d4f-900e-1cef0d4b5436)
+![5b13a83e-78bd-4b1b-bb53-8fd0c6a6d918](https://github.com/Matheus-Patricio/expressJS-api/assets/98114310/1401d767-4dce-4ab1-9749-b90ea5e5b913)
+![14bf1222-fd0b-4a5f-9784-bcc6a4ff8aa9](https://github.com/Matheus-Patricio/expressJS-api/assets/98114310/04e48b02-bc31-449f-8d89-229690081993)
+</br>
+<p>A Sequência acima é composta por: GET(todos ids), GET (um id específico), PUT e DELETE.</p>
 
-A transferência de dados, geralmente, usando o protocolo HTTP.
 
-O REST delimita algumas obrigações nessas transferências de dados.
+### Autor
+---
 
-Resources seria então: Uma entidade ou um objeto.
+<a href="https://github.com/Matheus-Patricio">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/98114310?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Matheus Patricio</b></sub></a>🚀</a>
 
-### 6 NECESSIDADES (constraints) para ser RESTful
 
-- _Uniform Interface_: Manter uma uniformidade, uma constância, um padrão na construção da interface. Nossa API precisa ser coerente para quem vai consumi-lá. Precisa fazer sentido para o cliente e não ser confusa. Logo, coisas como: o uso correto dos verbos HTTP; endpoints coerentes (todos os endpoints no plural, por exemplo); usar somente uma linguagem de comunicação (json) e não várias ao mesmo tempo; sempre enviar respostas aos clientes; são exemplos de aplicação de uma interface uniforme.
+Feito com ❤️ por Matheus Patricio 👋🏽 Entre em contato!
 
-- _Client-server_: Separação do cliente e do armazenamento de dados (servidor), dessa forma, poderemos ter uma portabilidade do nosso sistema, usando o React para WEB e React Native para o smartphone, por exemplo.
+[![Linkedin Badge](https://img.shields.io/badge/-Matheus-Patricio?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/matheus-patricio-5662b222b/)](https://www.linkedin.com/in/matheus-patricio-5662b222b/) 
+[![Gmail Badge](https://img.shields.io/badge/-contato.matheuspatricio@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:contato.matheuspatricio@gmail.com)](mailto:contato.matheuspatricio@gmail.com)
 
-- _Stateless_: Cada requisição que o cliente faz para o servidor, deverá conter todas as informações necessárias para o servidor entender e responder (RESPONSE) a requisição (REQUEST). Exemplo: A sessão do usuário deverá ser enviada em todas as requisições, para saber se aquele usuário está autenticado e apto a usar os serviços, e o servidor não pode lembrar que o cliente foi autenticado na requisição anterior. Nos nossos cursos, temos por padrão usar tokens para as comunicações.
 
-- _Cacheable_: As respostas para uma requisição, deverão ser explicitas ao dizer se aquela resquição, pode ou não ser cacheada pelo cliente.
-
-- _Layered System_: O cliente acessa a um endpoint, sem precisar saber da complexidade, de quais passos estão sendo necessários para o servidor responder a requisição, ou quais outras camadas o servidor estará lidando, para que a requisição seja respondida.
-
-- _Code on demand (optional)_: Dá a possibilidade da nossa aplicação pegar códigos, como o javascript, por exemplo, e executar no cliente.
-
-## RESTFUL
-
-RESTful, é a aplicação dos padrões REST.
-
-## BOAS PRÁTICAS
-
-- Utilizar verbos HTTP para nossas requisições.
-- Utilizar plural ou singular na criação dos endpoints? _NÃO IMPORTA!_ use um padrão!!
-- Não deixar barra no final do endpoint
-- Nunca deixe o cliente sem resposta!
-
-### VERBOS HTTP
-
-- GET: Receber dados de um Resource.
-- POST: Enviar dados ou informações para serem processados por um Resource.
-- PUT: Atualizar dados de um Resource.
-- DELETE: Deletar um Resource
-
-### STATUS DAS RESPOSTAS
-
-- 1xx: Informação
-- 2xx: Sucesso
-  - 200: OK
-  - 201: CREATED
-  - 204: Não tem conteúdo PUT POST DELETE
-- 3xx: Redirection
-- 4xx: Client Error
-  - 400: Bad Request
-  - 404: Not Found!
-- 5xx: Server Error
-  500: Internal Server Error
